@@ -16,7 +16,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     private final LinkedList<Product> mProducList;
     private LayoutInflater mInflater;
 
-
     public ProductAdapter(LinkedList<Product> mProducList, Context context) {
         mInflater = LayoutInflater.from(context);
         this.mProducList = mProducList;
@@ -30,7 +29,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder productViewHolder, int i) {
+    public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder holder, int position) {
+        Product mCurrent = mProducList.get(position);
+        holder.mTitle.setText(mCurrent.getTitle());
+        holder.mDescription.setText(mCurrent.getDescription());
+        holder.mPrice.setText(mCurrent.getPrice());
+        holder.mQuantity.setText(mCurrent.getQuantity());
 
     }
 
@@ -40,13 +44,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
-        public final TextView productItemView;
+        public final TextView mTitle;
+        public final TextView mDescription;
+        public final TextView mPrice;
+        public final TextView mQuantity;
+        public final TextView mImage;
         final ProductAdapter mAdapter;
 
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
-            productItemView = itemView.findViewById(R.id.product);
-            this.mAdapter = adapter;
+            mTitle = itemView.findViewById(R.id.item_title);
+            mDescription = itemView.findViewById(R.id.item_description);
+            mPrice = itemView.findViewById(R.id.item_price_num);
+            mQuantity = itemView.findViewById(R.id.item_quantity);
+            mImage = itemView.findViewById(R.id.item_image);
+            mAdapter = adapter;
         }
     }
 }
