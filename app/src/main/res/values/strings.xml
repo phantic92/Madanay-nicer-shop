@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Madanay Nicer Shop</string>
     <string name="action_settings">Settings</string>
-    <string name="welcome_text">Welcome to my Shop</string>
+    <string name="welcome_text">Welcome</string>
     <string name="enter_store_text">Start ></string>
     <string name="instructions_text">Upon clicking the "START" button, a list of items will be available
     for purchase. To purchase the displayed items, You will need to click on the (+) and (-) to increase
