@@ -22,7 +22,6 @@
         <activity android:name=".MenuActivity"
             android:label="Menu Activity"
             android:parentActivityName=".MainActivity">
-
         </activity>
 
     </application>
