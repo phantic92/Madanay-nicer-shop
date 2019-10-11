@@ -24,8 +24,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @NonNull
     @Override
-    public ProductAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+    public ProductAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        View mItemView = mInflater.inflate(R.layout.product_template, parent, false);
+        return new ProductViewHolder(mItemView, this);
     }
 
     @Override
@@ -35,17 +36,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mProducList.size();
     }
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
         public final TextView productItemView;
         final ProductAdapter mAdapter;
 
-        public ProductViewHolder(@NonNull View itemView) {
+        public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
-            productItemView = itemView.findFocus();
-            this.mAdapter =
+            productItemView = itemView.findViewById(R.id.product);
+            this.mAdapter = adapter;
         }
     }
 }
