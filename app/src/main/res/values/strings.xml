@@ -6,6 +6,14 @@
     <string name="instructions_text">Upon clicking the "START" button, a list of items will be available
     for purchase. To purchase the displayed items, You will need to click on the (+) and (-) to increase
         or decrease respectively the amount. Click the \"Checkout\" button to see your total.</string>
+    <string name="decrease_button">-</string>
+    <string name="increase_button">+</string>
+    <string name="gst_text">GST 5%......................................................$</string>
+    <string name="qst_text">QST 9.975%...............................................$</string>
+    <string name="checkout_title">Checkout</string>
+    <string name="total_text">Total................$</string>
+    <string name="subtotal_text">Subtotal: $</string>
+
 
 
 </resources>
