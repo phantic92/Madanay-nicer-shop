@@ -20,7 +20,7 @@
     <string name="barbell_title">Ohio Power Barbell</string>
     <string name="squat_stand_title">Squat Stand</string>
     <string name="squat_rack_price_tag">349.25</string>
-    <string name="squat_rack_description">Squat rack</string>
+    <string name="squat_rack_description">Rogue Fitness Squat rack</string>
     <string name="checkout_title">Checkout</string>
     <string name="total_before_taxes">Total Before Taxes....................................$</string>
     <string name="gst_text">GST 5%......................................................$</string>
@@ -31,5 +31,25 @@
     <string name="eleiko_quantity">0</string>
     <string name="barbell_quantity">0</string>
     <string name="squat_rack_quantity">0</string>
+    <string name="bench_title">Competition Flat Bench</string>
+    <string name="bench_description">Legend Fitness Competition Bench Press</string>
+    <string name="bench_price">445.24</string>
+    <string name="bench_quantity">0</string>
+    <string name="lifting_shoes_title">Weightlifting Shoes</string>
+    <string name="lifting_shoes_description">Adipower Squat Shoes</string>
+    <string name="lifting_shoes_price">128.99</string>
+    <string name="lifting_shoes_quantity">0</string>
+    <string name="belt_title">Lifting Belt</string>
+    <string name="belt_description">Rogue Fitness Weightlifting Belt</string>
+    <string name="belt_price">183.12</string>
+    <string name="belt_quantity">0</string>
+    <string name="pullup_bar_title">Pullup Bar</string>
+    <string name="pullup_bar_description">Great Pullup Bar</string>
+    <string name="pullup_bar_price">56.39</string>
+    <string name="pullup_bar_quantity">0</string>
+    <string name="bands_title">Resistance Bands</string>
+    <string name="bands_description">Assortment of Resistance bands</string>
+    <string name="bands_price">45.34</string>
+    <string name="bands_quantity">0</string>
 </resources>
 

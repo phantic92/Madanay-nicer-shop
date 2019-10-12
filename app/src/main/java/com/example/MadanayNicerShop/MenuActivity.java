@@ -42,6 +42,25 @@ public class MenuActivity extends AppCompatActivity {
                 R.drawable.eleiko_plates));
         mProductList.addLast(new Product(getString(R.string.squat_stand_title), getString(R.string.squat_rack_description),
                 getString(R.string.squat_rack_price_tag), getString(R.string.squat_rack_quantity), R.drawable.squat_rack));
+        mProductList.addLast(new Product(getString(R.string.bench_title),
+                getString(R.string.bench_description), getString(R.string.bench_price),
+                getString(R.string.bench_quantity), R.drawable.bench));
+        mProductList.addLast(new Product(getString(R.string.lifting_shoes_title),
+                getString(R.string.lifting_shoes_description), getString(R.string.lifting_shoes_price),
+                getString(R.string.lifting_shoes_quantity), R.drawable.squat_shoes));
+        mProductList.addLast(new Product(getString(R.string.belt_title), getString(R.string.belt_description),
+                getString(R.string.belt_price), getString(R.string.belt_quantity), R.drawable.lifting_belt));
+        mProductList.addLast(new Product("Lifting Straps", "Lifting Straps", "20.99",
+                "0", R.drawable.lifting_straps));
+        mProductList.addLast(new Product("Chalk Block", "Lifting chalk", "16.31",
+                "0", R.drawable.chalk_block));
+        mProductList.addLast(new Product(getString(R.string.pullup_bar_title),
+                getString(R.string.pullup_bar_description), getString(R.string.pullup_bar_price),
+                getString(R.string.pullup_bar_quantity), R.drawable.pullup_bar));
+        mProductList.addLast(new Product(getString(R.string.bands_title), getString(R.string.bands_description),
+                getString(R.string.bands_price), getString(R.string.bands_quantity), R.drawable.resistance_bands));
+
+        // Floating button
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
