@@ -43,8 +43,8 @@ public class MenuActivity extends AppCompatActivity {
         mProductList.addLast(new Product(getString(R.string.squat_stand_title), getString(R.string.squat_rack_description),
                 getString(R.string.squat_rack_price_tag), getString(R.string.squat_rack_quantity), getString(R.string.squat_stand_subtotal),  R.drawable.squat_rack));
         mProductList.addLast(new Product(getString(R.string.bench_title),
-                getString(R.string.bench_description), getString(R.string.bench_price), getString(R.string.bench_subtotal),
-                getString(R.string.bench_quantity), R.drawable.bench));
+                getString(R.string.bench_description), getString(R.string.bench_price),getString(R.string.bench_quantity),
+                getString(R.string.bench_subtotal), R.drawable.bench));
         mProductList.addLast(new Product(getString(R.string.lifting_shoes_title),
                 getString(R.string.lifting_shoes_description), getString(R.string.lifting_shoes_price),
                 getString(R.string.lifting_shoes_quantity), getString(R.string.squat_shoes_subtotal), R.drawable.squat_shoes));
