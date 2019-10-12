@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.MadanayNicerShop.Model.Product;
@@ -35,7 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.mDescription.setText(mCurrent.getDescription());
         holder.mPrice.setText(mCurrent.getPrice());
         holder.mQuantity.setText(mCurrent.getQuantity());
-
+        holder.mImage.setImageResource(mCurrent.getImage());
     }
 
     @Override
@@ -48,7 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public final TextView mDescription;
         public final TextView mPrice;
         public final TextView mQuantity;
-        public final TextView mImage;
+        public final ImageView mImage;
         final ProductAdapter mAdapter;
 
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
