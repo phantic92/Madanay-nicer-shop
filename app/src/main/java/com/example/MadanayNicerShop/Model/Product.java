@@ -6,12 +6,15 @@ public class Product {
     private String price;
     private String quantity;
     private int image;
+    private String subtotal;
 
-    public Product(String title, String description, String price, String quantity, int image) {
+    public Product(String title, String description, String price, String quantity, String subtotal,
+                   int image) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
+        this.subtotal = subtotal;
         this.image = image;
     }
 
@@ -26,6 +29,9 @@ public class Product {
     }
     public String getQuantity() {
         return quantity;
+    }
+    public String getSubtotal() {
+        return subtotal;
     }
     public int getImage() {
         return image;
@@ -42,6 +48,9 @@ public class Product {
     }
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+    public void setSubtotal(String subtotal) {
+        this.subtotal = subtotal;
     }
     public void setImage(int image) {
         this.image = image;

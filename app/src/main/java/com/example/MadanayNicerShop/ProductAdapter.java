@@ -36,6 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.mDescription.setText(mCurrent.getDescription());
         holder.mPrice.setText(mCurrent.getPrice());
         holder.mQuantity.setText(mCurrent.getQuantity());
+        holder.mSubtotal.setText(mCurrent.getSubtotal());
         holder.mImage.setImageResource(mCurrent.getImage());
     }
 
@@ -50,6 +51,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public final TextView mPrice;
         public final TextView mQuantity;
         public final ImageView mImage;
+        public final TextView mSubtotal;
         final ProductAdapter mAdapter;
 
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
@@ -58,6 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             mDescription = itemView.findViewById(R.id.item_description);
             mPrice = itemView.findViewById(R.id.item_price_num);
             mQuantity = itemView.findViewById(R.id.item_quantity);
+            mSubtotal = itemView.findViewById(R.id.item_subtotal_num);
             mImage = itemView.findViewById(R.id.item_image);
             mAdapter = adapter;
         }

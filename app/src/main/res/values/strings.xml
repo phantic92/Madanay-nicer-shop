@@ -51,5 +51,15 @@
     <string name="bands_description">Assortment of Resistance bands</string>
     <string name="bands_price">45.34</string>
     <string name="bands_quantity">0</string>
+    <string name="barbell_subtotal">0.00</string>
+    <string name="plates_subtotal">0.00</string>
+    <string name="squat_stand_subtotal">0.00</string>
+    <string name="bench_subtotal">0.00</string>
+    <string name="squat_shoes_subtotal">0.00</string>
+    <string name="belt_subtotal">0.00</string>
+    <string name="straps_subtotal">0.00</string>
+    <string name="chalk_subtotal">0.00</string>
+    <string name="bands_subtotal">0.00</string>
+    <string name="pullup_subtotal">0,00</string>
 </resources>
 
