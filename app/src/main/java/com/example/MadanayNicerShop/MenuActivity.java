@@ -69,7 +69,6 @@ public class MenuActivity extends AppCompatActivity{
 
         // Restore saved instance state
         if (savedInstanceState != null) {
-
         }
 
         // Floating button
@@ -84,8 +83,15 @@ public class MenuActivity extends AppCompatActivity{
                 // Set the dialog title and message
                 shippingAlert.setTitle("Shipping Options");
 
+                // put size of product list into extra
+                intent.putExtra("LIST_SIZE", mProductList.size());
+                // Put data in extra
+                for (int i = 0; i < mProductList.size(); i++) {
+                    intent.putExtra("SUBTOTAL" + i, mProductList.get(i).getSubtotal());
+                }
+
                 // Add radio buttons for shipping options
-                shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, 2,
+                shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, 3,
                         new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -22,9 +22,9 @@
     <string name="squat_rack_price_tag">349.25</string>
     <string name="squat_rack_description">Rogue Fitness Squat rack</string>
     <string name="checkout_title">Checkout</string>
-    <string name="total_before_taxes">Total Before Taxes....................................$</string>
+    <string name="total_before_taxes_text">Total Before Taxes...................................$</string>
     <string name="gst_text">GST 5%......................................................$</string>
-    <string name="qst_text">QST 9.975%...............................................$</string>
+    <string name="qst_text">QST 9.975%..............................................$</string>
     <string name="total_text">Total................$</string>
     <string name="checkout_button_text">Checkout</string>
     <string name="random">Random</string>
@@ -60,7 +60,7 @@
     <string name="straps_subtotal">0.00</string>
     <string name="chalk_subtotal">0.00</string>
     <string name="bands_subtotal">0.00</string>
-    <string name="pullup_subtotal">0,00</string>
+    <string name="pullup_subtotal">0.00</string>
     <string name="checkout_alert_text">Checkout</string>
     <string name="cancel_alert_text">Cancel</string>
     <string name="shipping_text">Shipping....................................................$</string>
