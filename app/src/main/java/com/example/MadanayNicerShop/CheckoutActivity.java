@@ -1,7 +1,5 @@
 package com.example.MadanayNicerShop;
 
-import android.app.Activity;
-
 /**
  * Author: Darrell-David Madanay
  * since 09/20/2019
@@ -12,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class CheckoutActivity extends AppCompatActivity {
     private static final String TAG = "checkoutActivity";
@@ -29,6 +25,11 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+        TextView shippingCost;
         Intent intent = getIntent();
+
+        shippingCost = findViewById(R.id.shipping_num);
+        shippingCost.setText(intent.getStringExtra(MenuActivity.EXTRA_KEY));
+
     }
 }

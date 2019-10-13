@@ -23,6 +23,11 @@
             android:label="Menu Activity"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity android:name=".CheckoutActivity"
+            android:label="Checkout Activity"
+            android:parentActivityName=".MenuActivity">
+
+        </activity>
 
     </application>
 

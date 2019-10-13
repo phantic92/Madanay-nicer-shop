@@ -1,6 +1,7 @@
 package com.example.MadanayNicerShop;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,9 +21,11 @@ import com.example.MadanayNicerShop.Model.Product;
 import java.util.LinkedList;
 
 public class MenuActivity extends AppCompatActivity{
+    private static final String TAG = MenuActivity.class.getSimpleName();
     private LinkedList<Product> mProductList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
+    public static final String EXTRA_KEY = "shipping cost";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,7 @@ public class MenuActivity extends AppCompatActivity{
             public void onClick(View view) {
                 final String[] SHIPPING_OPTIONS = {"Express - $50", "Regular - $10", "No hurry - no cost"};
                 AlertDialog.Builder shippingAlert = new AlertDialog.Builder(MenuActivity.this);
+                final Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
 
                 // Set the dialog title and message
                 shippingAlert.setTitle("Shipping Options");
@@ -84,7 +89,20 @@ public class MenuActivity extends AppCompatActivity{
                         new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getApplicationContext(), "You choose " + SHIPPING_OPTIONS[i], Toast.LENGTH_SHORT).show();
+                        Log.d(TAG,  "You chose " + SHIPPING_OPTIONS[i]);
+                        switch (i) {
+                            case 0:
+                                intent.putExtra(EXTRA_KEY, "50.00");
+                                break;
+                            case 1:
+                                intent.putExtra(EXTRA_KEY, "10.00");
+                                break;
+                            case 2:
+                                intent.putExtra(EXTRA_KEY, "0.00");
+                                break;
+                            default:
+                                Toast.makeText(MenuActivity.this, "Please Choose Shipping Option", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
@@ -92,15 +110,16 @@ public class MenuActivity extends AppCompatActivity{
                 shippingAlert.setPositiveButton(R.string.checkout_alert_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(intent);
                     }
                 });
-                
                 shippingAlert.setNegativeButton(R.string.cancel_alert_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(getApplicationContext(), "Cancelled", Toast.LENGTH_SHORT).show();
                     }
                 });
+                // Display alert dialog
                 shippingAlert.show();
             }
         });
