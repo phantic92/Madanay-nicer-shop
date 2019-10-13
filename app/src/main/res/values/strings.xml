@@ -61,5 +61,7 @@
     <string name="chalk_subtotal">0.00</string>
     <string name="bands_subtotal">0.00</string>
     <string name="pullup_subtotal">0,00</string>
+    <string name="checkout_alert_text">Checkout</string>
+    <string name="cancel_alert_text">Cancel</string>
 </resources>
 

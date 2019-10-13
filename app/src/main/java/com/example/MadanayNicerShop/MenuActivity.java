@@ -1,9 +1,10 @@
 package com.example.MadanayNicerShop;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,12 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.MadanayNicerShop.Model.Product;
 
 import java.util.LinkedList;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity{
     private LinkedList<Product> mProductList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
@@ -61,13 +63,45 @@ public class MenuActivity extends AppCompatActivity {
                 getString(R.string.bands_price), getString(R.string.bands_quantity),
                 getString(R.string.bands_subtotal), R.drawable.resistance_bands));
 
+        // Restore saved instance state
+        if (savedInstanceState != null) {
+
+        }
+
         // Floating button
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                final String[] SHIPPING_OPTIONS = {"Express - $50", "Regular - $10", "No hurry - no cost"};
+                AlertDialog.Builder shippingAlert = new AlertDialog.Builder(MenuActivity.this);
+
+                // Set the dialog title and message
+                shippingAlert.setTitle("Shipping Options");
+
+                // Add radio buttons for shipping options
+                shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, 2,
+                        new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getApplicationContext(), "You choose " + SHIPPING_OPTIONS[i], Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                // Set dialog buttons
+                shippingAlert.setPositiveButton(R.string.checkout_alert_text, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+                
+                shippingAlert.setNegativeButton(R.string.cancel_alert_text, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getApplicationContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                shippingAlert.show();
             }
         });
     }
@@ -92,5 +126,14 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        for (int i = 0; i < mProductList.size(); i++) {
+            outState.putString("quantity" + (i + 1), mProductList.get(i).getQuantity());
+            outState.putString("subtotal" + (i + 1), mProductList.get(i).getSubtotal());
+        }
     }
 }

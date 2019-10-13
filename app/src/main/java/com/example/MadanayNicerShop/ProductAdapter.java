@@ -18,7 +18,7 @@ import java.util.LinkedList;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private final LinkedList<Product> mProducList;
     private LayoutInflater mInflater;
-    private final static String TAG = "Product Adapter";
+    private final static String TAG = ProductAdapter.class.getSimpleName();
 
     public ProductAdapter(LinkedList<Product> mProducList, Context context) {
         mInflater = LayoutInflater.from(context);
