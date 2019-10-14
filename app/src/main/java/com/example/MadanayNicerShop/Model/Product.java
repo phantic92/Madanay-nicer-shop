@@ -1,58 +1,58 @@
 package com.example.MadanayNicerShop.Model;
 
 public class Product {
-    private String title;
-    private String description;
-    private String price;
-    private String quantity;
-    private int image;
-    private String subtotal;
+    private String mTitle;
+    private String mDescription;
+    private String mPrice;
+    private String mQuantity;
+    private int mImage;
+    private String mSubtotal;
 
     public Product(String title, String description, String price, String quantity, String subtotal,
                    int image) {
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.quantity = quantity;
-        this.subtotal = subtotal;
-        this.image = image;
+        this.mTitle = title;
+        this.mDescription = description;
+        this.mPrice = price;
+        this.mQuantity = quantity;
+        this.mSubtotal = subtotal;
+        this.mImage = image;
     }
 
     public String getTitle() {
-        return title;
+        return mTitle;
     }
     public String getDescription() {
-        return description;
+        return mDescription;
     }
     public String getPrice() {
-        return price;
+        return mPrice;
     }
     public String getQuantity() {
-        return quantity;
+        return mQuantity;
     }
     public String getSubtotal() {
-        return subtotal;
+        return mSubtotal;
     }
     public int getImage() {
-        return image;
+        return mImage;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.mTitle = title;
     }
     public void setDescription(String description) {
-        this.description = description;
+        this.mDescription = description;
     }
     public void setPrice(String price) {
-        this.price = price;
+        this.mPrice = price;
     }
     public void setQuantity(String quantity) {
-        this.quantity = quantity;
+        this.mQuantity = quantity;
     }
     public void setSubtotal(String subtotal) {
-        this.subtotal = subtotal;
+        this.mSubtotal = subtotal;
     }
     public void setImage(int image) {
-        this.image = image;
+        this.mImage = image;
     }
 }

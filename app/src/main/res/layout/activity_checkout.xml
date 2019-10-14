@@ -26,7 +26,7 @@
             android:id="@+id/total_before_taxes_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_before_taxes_text"/>
+            android:text="@string/total_before_taxes_text" />
 
         <TextView
             android:id="@+id/total_before_taxes_num"
@@ -74,7 +74,7 @@
             android:id="@+id/shipping_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shipping_text"/>
+            android:text="@string/shipping_text" />
 
         <TextView
             android:id="@+id/shipping_num"

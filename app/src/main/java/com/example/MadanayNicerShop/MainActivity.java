@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Starts menu activity
+     *
      * @param view View
      */
     public void startMenuActivity(View view) {

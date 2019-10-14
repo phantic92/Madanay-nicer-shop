@@ -19,11 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"
+        <activity
+            android:name=".MenuActivity"
             android:label="Menu Activity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".CheckoutActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".CheckoutActivity"
             android:label="Checkout Activity"
             android:parentActivityName=".MenuActivity">
 

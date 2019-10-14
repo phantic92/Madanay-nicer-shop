@@ -1,18 +1,16 @@
 package com.example.MadanayNicerShop;
 
 /**
- * Author: Darrell-David Madanay
- * since 09/20/2019
+ * @Author: Darrell-David Madanay
+ * @since 09/20/2019
  * Checkout Activity for shopping app
  */
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class CheckoutActivity extends AppCompatActivity {
     private static final String TAG = "checkoutActivity";
@@ -22,6 +20,7 @@ public class CheckoutActivity extends AppCompatActivity {
     /**
      * onCreate method that updates the total before taxes, the gst, the qst and the total after
      * taxes
+     *
      * @param savedInstanceState saved instance state
      */
     @Override

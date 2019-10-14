@@ -1,47 +1,49 @@
 package com.example.MadanayNicerShop;
 
+/**
+ * @Author: Darrell-Davidd Madanay
+ * @since 14/10/2019
+ * This is menu activity. It contains items
+ */
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import com.example.MadanayNicerShop.Model.Product;
-
 import java.util.LinkedList;
 
-public class MenuActivity extends AppCompatActivity{
+public class MenuActivity extends AppCompatActivity {
     private static final String EXPRESS_SHIP = "50.00";
     private static final String REGULAR_SHIP = "10.00";
     private static final String NO_HURRY_SHIP = "0.00";
+    public static final String EXTRA_KEY = "shipping cost";
     private static final String TAG = MenuActivity.class.getSimpleName();
     private LinkedList<Product> mProductList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
-    public static final String EXTRA_KEY = "shipping cost";
-    private boolean startActivityFlag;
+    private boolean mStartActivityFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         mRecyclerView = findViewById(R.id.recyclerview);
         mAdapter = new ProductAdapter(mProductList, this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        String restoreQuantity;
+        String restoreSubtotal;
 
         // Create products
         mProductList.addLast(new Product(getString(R.string.barbell_title), getString(R.string.barbell_description),
@@ -51,9 +53,9 @@ public class MenuActivity extends AppCompatActivity{
                 getString(R.string.eleiko_price_tag), getString(R.string.eleiko_quantity), getString(R.string.plates_subtotal),
                 R.drawable.eleiko_plates));
         mProductList.addLast(new Product(getString(R.string.squat_stand_title), getString(R.string.squat_rack_description),
-                getString(R.string.squat_rack_price_tag), getString(R.string.squat_rack_quantity), getString(R.string.squat_stand_subtotal),  R.drawable.squat_rack));
+                getString(R.string.squat_rack_price_tag), getString(R.string.squat_rack_quantity), getString(R.string.squat_stand_subtotal), R.drawable.squat_rack));
         mProductList.addLast(new Product(getString(R.string.bench_title),
-                getString(R.string.bench_description), getString(R.string.bench_price),getString(R.string.bench_quantity),
+                getString(R.string.bench_description), getString(R.string.bench_price), getString(R.string.bench_quantity),
                 getString(R.string.bench_subtotal), R.drawable.bench));
         mProductList.addLast(new Product(getString(R.string.lifting_shoes_title),
                 getString(R.string.lifting_shoes_description), getString(R.string.lifting_shoes_price),
@@ -73,6 +75,13 @@ public class MenuActivity extends AppCompatActivity{
 
         // Restore saved instance state
         if (savedInstanceState != null) {
+            for (int i = 0; i < mProductList.size(); i++) {
+                restoreQuantity = savedInstanceState.getString("quantity" + i);
+                restoreSubtotal = savedInstanceState.getString("subtotal" + i);
+                mProductList.get(i).setQuantity(restoreQuantity);
+                mProductList.get(i).setSubtotal(restoreSubtotal);
+                Log.d(TAG, "Quantity=" + restoreQuantity + " Subtotal=" + restoreSubtotal);
+            }
         }
 
         // Floating button
@@ -98,27 +107,27 @@ public class MenuActivity extends AppCompatActivity{
                 // Add radio buttons for shipping options
                 shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, -1,
                         new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        switch (i) {
-                            case 0:
-                                intent.putExtra(EXTRA_KEY, EXPRESS_SHIP);
-                                break;
-                            case 1:
-                                intent.putExtra(EXTRA_KEY, REGULAR_SHIP);
-                                break;
-                            case 2:
-                                intent.putExtra(EXTRA_KEY, NO_HURRY_SHIP);
-                        }
-                        startActivityFlag = true;
-                    }
-                });
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                switch (i) {
+                                    case 0:
+                                        intent.putExtra(EXTRA_KEY, EXPRESS_SHIP);
+                                        break;
+                                    case 1:
+                                        intent.putExtra(EXTRA_KEY, REGULAR_SHIP);
+                                        break;
+                                    case 2:
+                                        intent.putExtra(EXTRA_KEY, NO_HURRY_SHIP);
+                                }
+                                mStartActivityFlag = true;
+                            }
+                        });
 
                 // Set dialog buttons
                 shippingAlert.setPositiveButton(R.string.checkout_alert_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (startActivityFlag)
+                        if (mStartActivityFlag)
                             startActivity(intent);
                         else
                             Toast.makeText(getApplicationContext(),
@@ -162,9 +171,10 @@ public class MenuActivity extends AppCompatActivity{
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        // Save quantities and subtotals for each product
         for (int i = 0; i < mProductList.size(); i++) {
-            outState.putString("quantity" + (i + 1), mProductList.get(i).getQuantity());
-            outState.putString("subtotal" + (i + 1), mProductList.get(i).getSubtotal());
+            outState.putString("quantity" + i, mProductList.get(i).getQuantity());
+            outState.putString("subtotal" + i, mProductList.get(i).getSubtotal());
         }
     }
 }

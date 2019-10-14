@@ -112,14 +112,5 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             // Update Recyclerview to display the data
             mAdapter.notifyDataSetChanged();
         }
-
-        public void updateSubtotal(int quantity) {
-            double subtotalNum;
-            String formatSubtotal;
-
-            subtotalNum = quantity * Double.parseDouble(mPrice.getText().toString());
-            formatSubtotal = String.format("%.2f", subtotalNum);
-            mSubtotal.setText(formatSubtotal);
-        }
     }
 }
