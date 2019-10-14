@@ -43,7 +43,6 @@ public class CheckoutActivity extends AppCompatActivity {
         String formatGST;
         String formatQST;
 
-
         // get total before taxes
         for (int i = 0; i < intent.getIntExtra("LIST_SIZE", 0); i++) {
             totalb4Taxes += Double.parseDouble(intent.getStringExtra("SUBTOTAL" + i));
@@ -64,12 +63,11 @@ public class CheckoutActivity extends AppCompatActivity {
         // Set shipping cost
         shippingCost = findViewById(R.id.shipping_num);
         shippingCost.setText(intent.getStringExtra(MenuActivity.EXTRA_KEY));
-
+        Log.d(TAG, shippingCost.getText().toString());
 
         // Calculate Total
         totalAfterTaxes = totalb4Taxes + gstNum + qstNum + Double.parseDouble(shippingCost.getText().toString());
         formatTotalAfterTaxes = String.format("%.2f", totalAfterTaxes);
         totalAfterTaxesView.setText(formatTotalAfterTaxes);
-
     }
 }

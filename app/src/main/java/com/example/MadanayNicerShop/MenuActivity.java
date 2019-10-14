@@ -21,11 +21,15 @@ import com.example.MadanayNicerShop.Model.Product;
 import java.util.LinkedList;
 
 public class MenuActivity extends AppCompatActivity{
+    private static final String EXPRESS_SHIP = "50.00";
+    private static final String REGULAR_SHIP = "10.00";
+    private static final String NO_HURRY_SHIP = "0.00";
     private static final String TAG = MenuActivity.class.getSimpleName();
     private LinkedList<Product> mProductList = new LinkedList<>();
     private RecyclerView mRecyclerView;
     private ProductAdapter mAdapter;
     public static final String EXTRA_KEY = "shipping cost";
+    private boolean startActivityFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +80,8 @@ public class MenuActivity extends AppCompatActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String[] SHIPPING_OPTIONS = {"Express - $50", "Regular - $10", "No hurry - no cost"};
+                final String[] SHIPPING_OPTIONS = {"Express - $" + EXPRESS_SHIP,
+                        "Regular - $" + REGULAR_SHIP, "No hurry - $" + NO_HURRY_SHIP};
                 AlertDialog.Builder shippingAlert = new AlertDialog.Builder(MenuActivity.this);
                 final Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
 
@@ -91,24 +96,21 @@ public class MenuActivity extends AppCompatActivity{
                 }
 
                 // Add radio buttons for shipping options
-                shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, 3,
+                shippingAlert.setSingleChoiceItems(SHIPPING_OPTIONS, -1,
                         new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Log.d(TAG,  "You chose " + SHIPPING_OPTIONS[i]);
                         switch (i) {
                             case 0:
-                                intent.putExtra(EXTRA_KEY, "50.00");
+                                intent.putExtra(EXTRA_KEY, EXPRESS_SHIP);
                                 break;
                             case 1:
-                                intent.putExtra(EXTRA_KEY, "10.00");
+                                intent.putExtra(EXTRA_KEY, REGULAR_SHIP);
                                 break;
                             case 2:
-                                intent.putExtra(EXTRA_KEY, "0.00");
-                                break;
-                            default:
-                                Toast.makeText(MenuActivity.this, "Please Choose Shipping Option", Toast.LENGTH_SHORT).show();
+                                intent.putExtra(EXTRA_KEY, NO_HURRY_SHIP);
                         }
+                        startActivityFlag = true;
                     }
                 });
 
@@ -116,7 +118,11 @@ public class MenuActivity extends AppCompatActivity{
                 shippingAlert.setPositiveButton(R.string.checkout_alert_text, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(intent);
+                        if (startActivityFlag)
+                            startActivity(intent);
+                        else
+                            Toast.makeText(getApplicationContext(),
+                                    "Please Choose Delivery Method!", Toast.LENGTH_LONG).show();
                     }
                 });
                 shippingAlert.setNegativeButton(R.string.cancel_alert_text, new DialogInterface.OnClickListener() {
