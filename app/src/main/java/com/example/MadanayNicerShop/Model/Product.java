@@ -1,5 +1,11 @@
 package com.example.MadanayNicerShop.Model;
 
+/**
+ * @author Darrell-David Madanay
+ * @since 13/10/2019
+ * Product object contains title, description, price, quantity, subtotal and the image. Provides
+ * getters and setters
+ */
 public class Product {
     private String mTitle;
     private String mDescription;

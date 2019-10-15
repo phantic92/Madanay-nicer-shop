@@ -1,9 +1,3 @@
-/**
- * Author: Darrell-David Madanay
- * since 09/20/2019
- * Main Activity for shopping app
- */
-
 package com.example.MadanayNicerShop;
 
 import android.content.Intent;
@@ -12,6 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+/**
+ * Author: Darrell-David Madanay
+ * since 09/20/2019
+ * Main Activity for shopping app
+ */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 

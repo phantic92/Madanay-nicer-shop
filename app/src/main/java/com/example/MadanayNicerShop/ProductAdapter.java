@@ -1,10 +1,3 @@
-/**
- * @author Darrell-David Madanay
- * @since 13/10/2019
- * This is the product adapter for the recyclerview. It links the data of the products to the
- * recyclerview in the Menu Activity.
- */
-
 package com.example.MadanayNicerShop;
 
 import android.content.Context;
@@ -19,6 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.MadanayNicerShop.Model.Product;
 import java.util.LinkedList;
+
+/**
+ * @author Darrell-David Madanay
+ * @since 13/10/2019
+ * This is the product adapter for the recyclerview. It links the data of the products to the
+ * recyclerview in the Menu Activity.
+ */
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private final LinkedList<Product> mProducList;

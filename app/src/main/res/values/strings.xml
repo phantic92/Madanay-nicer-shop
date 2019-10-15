@@ -64,5 +64,12 @@
     <string name="checkout_alert_text">Checkout</string>
     <string name="cancel_alert_text">Cancel</string>
     <string name="shipping_text">Shipping....................................................$</string>
+    <string name="location_menu">Location</string>
+    <string name="theme_option">Theme</string>
+    <string name="sign_in_option">Sign in</string>
+    <string name="language_option">Language</string>
+    <string name="settings_option">Account Settings</string>
+    <string name="signup_option">Sign up</string>
+    <string name="sign_up_page_text">Sign Up Page</string>
 </resources>
 

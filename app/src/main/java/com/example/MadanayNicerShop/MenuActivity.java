@@ -1,12 +1,5 @@
 package com.example.MadanayNicerShop;
 
-/**
- * @Author: Darrell-Davidd Madanay
- * @since 14/10/2019
- * This is menu activity. It contains the title, description, quantity, price, subtoal and
- * image of the items.
- */
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +16,12 @@ import android.widget.Toast;
 import com.example.MadanayNicerShop.Model.Product;
 import java.util.LinkedList;
 
+/**
+ * @Author: Darrell-Davidd Madanay
+ * @since 14/10/2019
+ * This is menu activity. It contains the title, description, quantity, price, subtoal and
+ * image of the items.
+ */
 public class MenuActivity extends AppCompatActivity {
     private static final String EXPRESS_SHIP = "50.00";
     private static final String REGULAR_SHIP = "10.00";
@@ -164,13 +163,26 @@ public class MenuActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.language:
+                Toast.makeText(getApplicationContext(), "You Clicked on Language", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.theme:
+                Toast.makeText(getApplicationContext(), "You Clicked on Theme", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.sign_up:
+                Toast.makeText(getApplicationContext(), "You CLicked on Sign up", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.settings:
+                Toast.makeText(getApplicationContext(), "You Clicked on Account Settings", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.location:
+                Toast.makeText(getApplicationContext(), "You Clicked on Location", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.sign_in:
+                Toast.makeText(getApplicationContext(), "You clicked on Sign in", Toast.LENGTH_SHORT).show();
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
