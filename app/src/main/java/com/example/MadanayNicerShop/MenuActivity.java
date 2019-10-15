@@ -3,7 +3,8 @@ package com.example.MadanayNicerShop;
 /**
  * @Author: Darrell-Davidd Madanay
  * @since 14/10/2019
- * This is menu activity. It contains items
+ * This is menu activity. It contains the title, description, quantity, price, subtoal and
+ * image of the items.
  */
 
 import android.content.DialogInterface;
@@ -33,6 +34,11 @@ public class MenuActivity extends AppCompatActivity {
     private ProductAdapter mAdapter;
     private boolean mStartActivityFlag;
 
+    /**
+     * This creates the list of products and sets the product adapter to the recyclerview. It
+     * also contains the onClickListener for the FAB.
+     * @param savedInstanceState saved instance state when activity is destroyed
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,6 +174,11 @@ public class MenuActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Saves the quantity and the subtotal of each product to be restored when the device is
+     * rotated.
+     * @param outState Bundle of instance state
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

@@ -1,3 +1,10 @@
+/**
+ * @author Darrell-David Madanay
+ * @since 13/10/2019
+ * This is the product adapter for the recyclerview. It links the data of the products to the
+ * recyclerview in the Menu Activity.
+ */
+
 package com.example.MadanayNicerShop;
 
 import android.content.Context;
@@ -10,9 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.MadanayNicerShop.Model.Product;
-
 import java.util.LinkedList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -32,6 +37,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(mItemView, this);
     }
 
+    /**
+     * Adds the product data into the appropriate Views.
+     * @param holder Product View Holder
+     * @param position position
+     */
     @Override
     public void onBindViewHolder(@NonNull ProductAdapter.ProductViewHolder holder, int position) {
         Product mCurrent = mProducList.get(position);
@@ -62,6 +72,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         private double subTotalNum;
         private String formatSubtotal;
 
+        /**
+         * Constructor
+         * @param itemView View
+         * @param adapter adapter
+         */
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
             mTitle = itemView.findViewById(R.id.item_title);
@@ -77,6 +92,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             mDecreaseButton.setOnClickListener(this);
         }
 
+        /**
+         * Listens for click on the decrease or increase buttons. This will then update the quantity
+         * TextView and calculate the subtotal.
+         * @param view view
+         */
         @Override
         public void onClick(View view) {
             int position = getLayoutPosition();

@@ -1,10 +1,11 @@
-package com.example.MadanayNicerShop;
-
 /**
  * @Author: Darrell-David Madanay
  * @since 09/20/2019
- * Checkout Activity for shopping app
+ * Checkout Activity for shopping app. It contains the total before taxes, the gst, the qst, the
+ * shipping cost and the total after taxes
  */
+
+package com.example.MadanayNicerShop;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

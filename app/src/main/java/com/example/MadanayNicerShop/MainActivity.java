@@ -1,10 +1,10 @@
-package com.example.MadanayNicerShop;
-
 /**
  * Author: Darrell-David Madanay
  * since 09/20/2019
  * Main Activity for shopping app
  */
+
+package com.example.MadanayNicerShop;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
