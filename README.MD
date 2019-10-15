@@ -5,9 +5,11 @@ This is a modified version of the first assignment (MadadnayShop). Instead of us
 ![emulator screenshot](readme_images/emulator_screenshot.PNG)
 
 I also needed to implement a alert dialog for the shipping options.
+
 ![Shipping options](readme_images/shipping.PNG)
 
 An option menu has been added to improve user experience. 
+
 ![option menu](readme_images/menu.PNG)
 
 To use the app, Simply click on the "-" (decrease) or "+" (increase) buttons to remove or add respectively unto your cart. Your subtotal will be
