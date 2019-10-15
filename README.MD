@@ -1,9 +1,10 @@
 <h1>Madanay Nicer Shop</h1>
 <h2>Description</h2>
 This is a modified version of the first assignment (MadadnayShop). Instead of using different cardViews for each item, I needed to implement a RecyclerView because it is much more efficient when used with a large amount of data.
-![Emulator screenshot](readme_images/emulator_screenshot.PNG)
 
-I also needed to implement a alert dialog for the shipping options. </br>
+![emulator screenshot](readme_images/emulator_screenshot.PNG)
+
+I also needed to implement a alert dialog for the shipping options.
 ![Shipping options](readme_images/shipping.PNG)
 
 An option menu has been added to improve user experience. 
