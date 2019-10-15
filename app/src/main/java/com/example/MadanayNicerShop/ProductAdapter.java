@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.MadanayNicerShop.Model.Product;
+
 import java.util.LinkedList;
 
 /**
@@ -39,7 +41,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     /**
      * Adds the product data into the appropriate Views.
-     * @param holder Product View Holder
+     *
+     * @param holder   Product View Holder
      * @param position position
      */
     @Override
@@ -74,8 +77,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         /**
          * Constructor
+         *
          * @param itemView View
-         * @param adapter adapter
+         * @param adapter  adapter
          */
         public ProductViewHolder(@NonNull View itemView, ProductAdapter adapter) {
             super(itemView);
@@ -95,6 +99,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         /**
          * Listens for click on the decrease or increase buttons. This will then update the quantity
          * TextView and calculate the subtotal.
+         *
          * @param view view
          */
         @Override

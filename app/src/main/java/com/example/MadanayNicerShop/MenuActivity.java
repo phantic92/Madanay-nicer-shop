@@ -13,7 +13,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 import com.example.MadanayNicerShop.Model.Product;
+
 import java.util.LinkedList;
 
 /**
@@ -36,6 +38,7 @@ public class MenuActivity extends AppCompatActivity {
     /**
      * This creates the list of products and sets the product adapter to the recyclerview. It
      * also contains the onClickListener for the FAB.
+     *
      * @param savedInstanceState saved instance state when activity is destroyed
      */
     @Override
@@ -189,6 +192,7 @@ public class MenuActivity extends AppCompatActivity {
     /**
      * Saves the quantity and the subtotal of each product to be restored when the device is
      * rotated.
+     *
      * @param outState Bundle of instance state
      */
     @Override
